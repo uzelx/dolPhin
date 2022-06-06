@@ -149,24 +149,30 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                 }
                 else
                 {
-                    if (!validl)
-                    {
-                        printf("E: ", ConsoleColor.Red, "lhost is not an valid IPAddress.\n", ConsoleColor.White);
-                    }
-
-                    if (!validr)
-                    {
-                        printf("E: ", ConsoleColor.Red, "rhost is not an valid IPAddress.\n", ConsoleColor.White);
-                    }
-
-                    if (!validp)
-                    {
-                        printf("E: ", ConsoleColor.Red, "lport is not an valid Port.\n", ConsoleColor.White);
-                    }
+                    printExceptionNotConnected(validl,validr,validp);
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex) 
+            {
                 printf("E: ", ConsoleColor.Red, ex.Message, ConsoleColor.White);
+            }
+        }
+
+        public static void printExceptionNotConnected(bool validl, bool validr, bool validp)
+        {
+            if (!validl)
+            {
+                printf("E: ", ConsoleColor.Red, "lhost is not an valid IPAddress.\n", ConsoleColor.White);
+            }
+
+            if (!validr)
+            {
+                printf("E: ", ConsoleColor.Red, "rhost is not an valid IPAddress.\n", ConsoleColor.White);
+            }
+
+            if (!validp)
+            {
+                printf("E: ", ConsoleColor.Red, "lport is not an valid Port.\n", ConsoleColor.White);
             }
         }
 

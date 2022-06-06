@@ -24,15 +24,19 @@ namespace dolPhin.shell
             }
             else if (cleanInput=="clear")
             { 
-                return "clear";
+                return cleanInput;
             }
             else if (cleanInput=="exit")
             {
-                return "exit";
+                return cleanInput;
             }
             else if (cleanInput=="run")
             {
-                return "run";
+                return cleanInput;
+            }
+            else if (cleanInput == "options")
+            {
+                return cleanInput;
             }
 
             else if (cleanInput.StartsWith("set"))

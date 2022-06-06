@@ -22,7 +22,7 @@ namespace dolPhin.shell.Command.cmds
                 try
                 {
                     shell.dshell.variables.Remove(variableName);
-                    printf("S: ", ConsoleColor.Green, "Variable was Successfully removed.\n", ConsoleColor.White);
+                    printf("[+] ", ConsoleColor.Green, "Variable was Successfully removed.\n", ConsoleColor.White);
                 }
                 catch (Exception ex) {
                     printf("E: ", ConsoleColor.Red, ex.Message+"\n", ConsoleColor.White);

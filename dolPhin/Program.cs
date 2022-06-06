@@ -40,6 +40,9 @@ namespace dolPhin
                         case "run":
                             shell.Command.useCommand.run();
                             break;
+                        case "options":
+                            shell.Command.useCommand.options();
+                            break;
 
                         case "set":
                             shell.Command.useCommand.set(commandInput);

@@ -5,11 +5,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationIcon>dolPhin.ico</ApplicationIcon>
+    <ApplicationIcon>dolPhin_New.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="dolPhin.ico" />
+    <Content Include="dolPhin_New.ico" />
   </ItemGroup>
 
 </Project>

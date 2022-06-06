@@ -11,6 +11,14 @@ namespace dolPhin.shell.Command
 {
     public class useCommand
     {
+        public static void options()
+        {
+            printf("+-------+ set ==> set an variable to a value (set [name] [value])"+"\n", ConsoleColor.White);
+            printf("|OPTIONS| get ==> get the value of an variable (get [name])"+"\n", ConsoleColor.White);
+            printf("+-------+ rem ==> remove an variable (rem [name])"+"\n", ConsoleColor.White);
+            printf("          run ==> run the Server"+"\n", ConsoleColor.White);
+        }
+
         public static void clear()
         {
             Console.Clear();
