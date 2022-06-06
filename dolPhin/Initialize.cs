@@ -29,27 +29,10 @@ namespace dolPhin
             shell.dshell.variables.Add("lport", LPORT);
             shell.dshell.variables.Add("cprompt", "0");
 
-            printf(@"                   *** ####### ***"+"\n", ConsoleColor.Blue); 
-            printf(@"               *#####################*"+"\n", ConsoleColor.Blue); 
-            printf(@"           *#############################*"+"\n", ConsoleColor.Blue); 
-            printf(@"        *###################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"      *#######################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"    *###########################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"   *#################     ######              ###*"+"\n", ConsoleColor.Blue); 
-            printf(@"  *################       #########      #########*"+"\n", ConsoleColor.Blue); 
-            printf(@" *################         ########      ##########*"+"\n", ConsoleColor.Blue); 
-            printf(@" *######                                 ##########*"+"\n", ConsoleColor.Blue); 
-            printf(@" *#####                                  ##########*"+"\n", ConsoleColor.Blue); 
-            printf(@" *#####                                  ##########*"+"\n", ConsoleColor.Blue); 
-            printf(@" *#####                                  ##########*"+"\n", ConsoleColor.Blue); 
-            printf(@"  *####                                 ##########*"+"\n", ConsoleColor.Blue); 
-            printf(@"   *#############################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"    *###########################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"      *########################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"        *###################################*"+"\n", ConsoleColor.Blue); 
-            printf(@"           *#############################*"+"\n", ConsoleColor.Blue); 
-            printf(@"               *#####################*"+"\n", ConsoleColor.Blue); 
-            printf(@"                  *** ####### ***" + "\n\n", ConsoleColor.Blue); 
+            printf(@"               ^_^ ", ConsoleColor.Blue, "                                             "+"\n", ConsoleColor.White);
+            printf(@",,,__________.\   /", ConsoleColor.Blue, " ---> Welcome to dolPhin ", ConsoleColor.White, "v1.0.0.5            "+"\n", ConsoleColor.Yellow);
+            printf(@"\   ", ConsoleColor.Blue, "*", ConsoleColor.DarkGray, "            / ", ConsoleColor.Blue, "----> In this Version we have over ", ConsoleColor.White, "?", ConsoleColor.Blue, " features"+"\n", ConsoleColor.White);
+            printf(@" \_____________./  ", ConsoleColor.Blue, "----> Have fun creating your own Shells!     "+"\n\n", ConsoleColor.White);
 
             printf(@"           =[ ", ConsoleColor.White, "dolphin v1.0.1-dev          ", ConsoleColor.Yellow, "]\n", ConsoleColor.White);
             printf(@"+ ------ --=[ ", ConsoleColor.White, "0 build in commands         ", ConsoleColor.Gray  , "]\n", ConsoleColor.White);

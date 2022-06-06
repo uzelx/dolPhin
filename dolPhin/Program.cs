@@ -5,7 +5,7 @@ namespace dolPhin
 {
     public class Program
     {
-        public static string tcpc = "shell";
+        public static string tcpc = "cmd";
         public static void Main(string[] args)
         {
             var exitEvent = new ManualResetEvent(false);

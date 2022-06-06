@@ -1,17 +1,13 @@
-﻿using static dolPhin.clean.print;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Net.Sockets;
 using System.Net;
+using static dolPhin.clean.print;
 
 namespace dolPhin.shell.Command.cmds.reversetcp
 {
     public class reversetcpconnection
     {
-        public static List<string> donotShow = new List<string>();
+        public static List<string> clientList = new List<string>();
         public static void run(string lhost, string rhost, int lport)
         {
             try
@@ -50,9 +46,7 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                             string rip = ((IPEndPoint)tcpClient.Client.RemoteEndPoint).Address.ToString();
                             string rp = ((IPEndPoint)tcpClient.Client.RemoteEndPoint).Port.ToString();
 
-                            // print
-
-                            if (!donotShow.Contains(rip))
+                            if (!clientList.Contains(rip))
                             {
                                 printf("| ", ConsoleColor.White,
                                        $"{addspace(rip, 15)}", ConsoleColor.Green,
@@ -61,15 +55,10 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                                        " | ", ConsoleColor.White,
                                        $"{DateTime.Now.ToString("HH:mm:ss")}", ConsoleColor.Yellow,
                                        " |\n", ConsoleColor.White);
-                            }
-
-                            if (!donotShow.Contains(rip))
-                            {
-                                donotShow.Add(rip);
+                                clientList.Add(rip);
                             }
 
 
-                            // close connection
                             tcpListener.Stop();
                             tcpClient.GetStream().Close();
                             tcpClient.Close();
@@ -91,24 +80,23 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                                        " |\n", ConsoleColor.White);
                     printf(" ------------------------------------ \n\n", ConsoleColor.White);
 
-                    printf("[", ConsoleColor.White, "*", ConsoleColor.Blue, "] ", ConsoleColor.White, "Connection Recived.\n", ConsoleColor.White);
-                    printf("[", ConsoleColor.White, "*", ConsoleColor.Blue, "] ", ConsoleColor.White, "Spawning Shell...\n\n", ConsoleColor.White);
+                    printf("[*] ", ConsoleColor.Blue, "Connection received.\n", ConsoleColor.White);
+                    printf("[+] ", ConsoleColor.Green, "Spawning Shell\n\n", ConsoleColor.White);
                     Program.tcpc = ((IPEndPoint)tcpClient.Client.RemoteEndPoint).Address.ToString();
 
                     int index = 0;
-                    string firstmessage = string.Empty;
+                    string firstMessage = string.Empty;
                     while (true)
                     {
                         try
                         {
                             index++;
-                            NetworkStream stream = tcpClient.GetStream();
-                            
+                            NetworkStream stream = tcpClient.GetStream();                            
                             byte[] array = new byte[tcpClient.ReceiveBufferSize];
-
+                            
                             if (index != 1 && dshell.variables.ContainsKey("second") || !dshell.variables.ContainsKey("second"))
                             {
-                                int num2 = stream.Read(array, 0, array.Length);// Math.Min(array.Length, tcpClient.ReceiveBufferSize));
+                                int num2 = stream.Read(array, 0, array.Length);
                             }
 
                             string RecivedData = Encoding.ASCII.GetString(array);
@@ -117,8 +105,7 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                             try
                             {
                                 RecivedData = RecivedData.Substring(0, RecivedData.Length - 1);
-                            }
-                            catch { /*skip*/ }
+                            } catch { }
 
                             if (array.Length > 65536)
                             {
@@ -128,8 +115,8 @@ namespace dolPhin.shell.Command.cmds.reversetcp
 
                             if (index == 1)
                             {
-                                firstmessage = RecivedData;
-                                Console.Write(firstmessage + (dshell.variables.ContainsKey("cprompt") ? "\n\n" : ""));
+                                firstMessage = RecivedData;
+                                Console.Write(firstMessage + (dshell.variables.ContainsKey("cprompt") ? "\n\n" : ""));
                             }
                             else
                             {
@@ -150,7 +137,7 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                         catch (Exception ex)
                         {
                             printf("E: ", ConsoleColor.Red, ex.Message + "\n", ConsoleColor.White);
-                            Program.tcpc = "shell";
+                            Program.tcpc = "cmd";
                             tcpListener.Stop();
                             tcpClient.GetStream().Close();
                             tcpClient.Close();
@@ -158,7 +145,7 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                         }
                     }
 
-                    Program.tcpc = "shell";
+                    Program.tcpc = "cmd";
                 }
                 else
                 {
