@@ -32,6 +32,11 @@ namespace dolPhin.shell.Command.cmds.reversetcp
                     TcpListener tcpListener = new TcpListener(localEP);
                     TcpClient tcpClient = null;
 
+                    printf("[+] ", ConsoleColor.Green, "Using Server Address (", ConsoleColor.White, lhost, ConsoleColor.Blue, ")\n", ConsoleColor.White);
+                    printf("[+] ", ConsoleColor.Green, "Using Server Port    (", ConsoleColor.White, lport, ConsoleColor.Blue, ")\n", ConsoleColor.White);
+                    
+                    printf("[+] ", ConsoleColor.Green, "Waiting for "+ (rhost.Trim()=="*" ? "" : "         ("), ConsoleColor.White,  rhost.Trim()=="*" ? "anyone" : lhost, rhost.Trim()=="*" ? ConsoleColor.White : ConsoleColor.Blue, (rhost.Trim()=="*"? "" : ")")+"\n", ConsoleColor.White);
+
                     printf(" ____________________________________ \n", ConsoleColor.White);
                     printf("| ", ConsoleColor.White, "IPAddress", ConsoleColor.Green, "       | ", ConsoleColor.White, "Port", ConsoleColor.Blue, "  | ", ConsoleColor.White, "Time", ConsoleColor.Yellow, "     |\n", ConsoleColor.White);
                     printf("|-----------------|-------|----------|\n", ConsoleColor.White);

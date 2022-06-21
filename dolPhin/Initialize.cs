@@ -30,12 +30,12 @@ namespace dolPhin
             shell.dshell.variables.Add("cprompt", "0");
 
             printf(@"               ^_^ ", ConsoleColor.Blue, "                                             "+"\n", ConsoleColor.White);
-            printf(@",,,__________.\   /", ConsoleColor.Blue, " ---> Welcome to dolPhin ", ConsoleColor.White, "v1.0.0.5            "+"\n", ConsoleColor.Yellow);
+            printf(@",,,__________.\   /", ConsoleColor.Blue, " ---> Welcome to dolPhin ", ConsoleColor.White, "v1.0.0.2            "+"\n", ConsoleColor.Yellow);
             printf(@"\   ", ConsoleColor.Blue, "*", ConsoleColor.DarkGray, "            / ", ConsoleColor.Blue, "----> In this Version we have over ", ConsoleColor.White, "?", ConsoleColor.Blue, " features"+"\n", ConsoleColor.White);
             printf(@" \_____________./  ", ConsoleColor.Blue, "----> Have fun creating your own Shells!     "+"\n\n", ConsoleColor.White);
 
-            printf(@"           =[ ", ConsoleColor.White, "dolphin v1.0.1-dev          ", ConsoleColor.Yellow, "]\n", ConsoleColor.White);
-            printf(@"+ ------ --=[ ", ConsoleColor.White, "0 build in commands         ", ConsoleColor.Gray  , "]\n", ConsoleColor.White);
+            printf(@"           =[ ", ConsoleColor.White, "dolphin v1.0.2-dev          ", ConsoleColor.Yellow, "]\n", ConsoleColor.White);
+            printf(@"+ ------ --=[ ", ConsoleColor.White, "2 customizable options      ", ConsoleColor.Gray  , "]\n", ConsoleColor.White);
             printf(@"+ ------ --=[ ", ConsoleColor.White, "** This is dolPhin 1-dev ** ", ConsoleColor.Gray  , "]\n\n", ConsoleColor.White);
         }       
 
